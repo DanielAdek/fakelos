@@ -4,10 +4,12 @@ import Button from './reusable/Button';
 import {MouseEventHandler} from "react";
 
 const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
+	'NestJS App Development',
+	'AI Powered Application',
+	'Node/ExpressJS Development',
+	'ReactJS Web Application',
+	'Fullstack web Development',
+	'Spring Boot APP Development',
 ];
 
 function HireMeModal(props: { onClose: MouseEventHandler<HTMLButtonElement>, onRequest: MouseEventHandler<HTMLSpanElement> }) {

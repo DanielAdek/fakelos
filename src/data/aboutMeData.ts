@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import moment from "moment";
 
 export const aboutMeData = [
 	{
@@ -10,22 +11,22 @@ export const aboutMeData = [
 	{
 		id: uuidv4(),
 		bio: `Proven experience developing consumer-focused
-					products using Technology tools like NestJS, Node Js, Java (Spring Boot), SPA (ReactJS), NoSql, SQL,
-					Micro-services and other technologies and architectures.
+					products using Technology tools like NestJS, NodeJS/Express, Java (Spring Boot), SPA (ReactJS), NoSql, SQL,
+					Microservices, AI powered app using LangchainJS, and other technologies and architectures.
 				`
 	},
 	{
 		id: uuidv4(),
-		bio: `Experience building products (like fintech, social application, pension application, vehicle tracking application and more) for web and mobile application users, meeting
+		bio: `Experience building products (like fintech, social application, pension application, vehicle tracking application, AI powered contextual app, and more) for cross-functional app, meeting
 					highest standards for design, user experience, best practices, usability and speed.
 				`
 	},
 	{
 		id: uuidv4(),
 		bio: `My collaboration, people-centric nature, and compassion have afforded me excellent software development skills 
-		Within the last 5 years, I have also streangthen my development skill in Javascript, Typescript and with growth mindedness 
-		I have indulge in self development for better productivity and more development skills which include Java (Spring Boot) and Flutter for 
-		mobile development.`
+		Within the last ${(moment("2018-08-06", "YYYYMMDD").fromNow()).split(' ')[0]} years, I have also streangthen my development skill in Javascript, Typescript and with growth mindedness 
+		I have indulge in self development for better productivity and more development skills which include Java (Spring Boot), Generative AI and 
+		more.`
 	},
 	{
 		id: uuidv4(),
