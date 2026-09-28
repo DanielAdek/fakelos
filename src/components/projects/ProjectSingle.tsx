@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import {ProjectData} from "@/data/projectsData";
+import { Project } from '../../types/api';
 
-const imageStyle = { maxWidth: '100%', height: 'auto' };
-
-const ProjectSingle = (props: ProjectData) => {
+const ProjectSingle = (props: Project) => {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -18,7 +16,7 @@ const ProjectSingle = (props: ProjectData) => {
 		>
 			<Link
 				href="/projects/[id]"
-				as={'/projects/' + props.id}
+				as={'/projects/' + props._id}
 				aria-label="Single Project"
 				passHref
 			>

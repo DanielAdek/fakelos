@@ -1,9 +1,17 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import { aboutMeData } from '../../data/aboutMeData';
+import { useEffect, useState } from 'react';
+import { getAbout } from '../../services/api';
+import { About } from '../../types/api';
 
 function AboutMeBio() {
-	const [aboutMe, setAboutMe] = useState(aboutMeData);
+	const [aboutMe, setAboutMe] = useState<About[]>([]);
+
+	useEffect(() => {
+		getAbout()
+			.then((res) => setAboutMe((res.data as unknown as About[]) || []))
+			.catch(console.error);
+	}, []);
+
 	return (
 		<div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
 			<div className="w-full sm:w-1/4 mb-7 sm:mb-0">
@@ -20,7 +28,7 @@ function AboutMeBio() {
 				{aboutMe.map((bio) => (
 					<p
 						className="mb-4 text-ternary-dark dark:text-ternary-light text-lg"
-						key={bio.id}
+						key={bio._id}
 					>
 						{bio.bio}
 					</p>

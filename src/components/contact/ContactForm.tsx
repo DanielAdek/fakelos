@@ -1,15 +1,40 @@
+import { useState } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import { submitContact } from '../../services/api';
 
 function ContactForm() {
+	const [submitting, setSubmitting] = useState(false);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const form = e.currentTarget;
+		const formData = new FormData(form);
+
+		const data = {
+			name: formData.get('name') as string,
+			email: formData.get('email') as string,
+			subject: formData.get('subject') as string,
+			message: formData.get('message') as string,
+		};
+
+		setSubmitting(true);
+		try {
+			await submitContact(data);
+			alert('Thank you for your message! I will get back to you soon.');
+			form.reset();
+		} catch {
+			alert('Something went wrong. Please try again or email me at daniel.adek.k@gmail.com');
+		} finally {
+			setSubmitting(false);
+		}
+	};
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={(e) => {
-						e.preventDefault();
-						alert("This functionality is under development. \n Kindly email me on daniel.adek.k@gmail.com \n Thank you Contacting me")
-					}}
+					onSubmit={handleSubmit}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
 					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
@@ -58,13 +83,14 @@ function ContactForm() {
 							cols={14}
 							rows={6}
 							aria-label="Message"
+							required
 						></textarea>
 					</div>
 
 					<div className="mt-6">
 						<span className="font-general-medium  px-7 py-4 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
 							<Button
-								title="Send Message"
+								title={submitting ? 'Sending...' : 'Send Message'}
 								aria-label="Send Message"
 							/>
 						</span>
