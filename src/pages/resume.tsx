@@ -5,15 +5,15 @@ import PagesMetaHead from '../components/PagesMetaHead';
 import { getActiveResume } from '../services/api';
 import { Resume } from '../types/api';
 
-// Ensure Cloudinary URL serves inline (for iframe preview)
-function toInlineUrl(url: string): string {
-	if (url.includes('/fl_inline/')) return url;
-	return url.replace('/upload/', '/upload/fl_inline/');
+// Get the raw Cloudinary URL (strip any transformation flags)
+function getRawUrl(url: string): string {
+	return url.replace('/fl_inline/', '/').replace('/fl_attachment/', '/');
 }
 
-// Ensure Cloudinary URL serves as attachment (for download)
-function toDownloadUrl(url: string): string {
-	return url.replace('/fl_inline/', '/').replace('/upload/', '/upload/fl_attachment/');
+// Google Docs Viewer renders PDFs inline in an iframe
+function toPreviewUrl(url: string): string {
+	const raw = getRawUrl(url);
+	return `https://docs.google.com/viewer?url=${encodeURIComponent(raw)}&embedded=true`;
 }
 
 function ResumePage() {
@@ -24,7 +24,6 @@ function ResumePage() {
 		getActiveResume()
 			.then((res) => {
 				const data = res.data as unknown as Resume;
-				// Check if we got an actual resume (not empty object)
 				if (data && data._id) {
 					setResume(data);
 				}
@@ -69,7 +68,10 @@ function ResumePage() {
 						{/* Download button */}
 						<div className="flex justify-center mb-6">
 							<a
-								href={toDownloadUrl(resume.fileUrl)}
+								href={getRawUrl(resume.fileUrl)}
+								download
+								target="_blank"
+								rel="noopener noreferrer"
 								className="flex items-center gap-2 font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-6 py-3 duration-300"
 							>
 								<FiDownload className="text-lg" />
@@ -77,10 +79,10 @@ function ResumePage() {
 							</a>
 						</div>
 
-						{/* PDF Preview */}
+						{/* PDF Preview via Google Docs Viewer */}
 						<div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
 							<iframe
-								src={toInlineUrl(resume.fileUrl)}
+								src={toPreviewUrl(resume.fileUrl)}
 								className="w-full"
 								style={{ height: '80vh' }}
 								title="Resume Preview"
