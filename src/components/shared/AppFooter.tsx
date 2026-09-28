@@ -9,7 +9,7 @@ const socialLinks = [
 	{
 		id: 1,
 		icon: <FiGlobe />,
-		url: 'https://danieladek-portfolio.vercel.app/',
+		url: 'https://danistacksemporia.vercel.app/',
 	},
 	{
 		id: 2,

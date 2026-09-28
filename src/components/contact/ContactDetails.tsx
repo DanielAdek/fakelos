@@ -3,7 +3,7 @@ import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 const contacts = [
 	{
 		id: 1,
-		name: 'ZONA KELEM 34 ACHADA SANTO ANTONIO',
+		name: 'Zona Kelem 34 Achada Santo Antonio, Praia, Cape Verde',
 		icon: <FiMapPin />,
 	},
 	{

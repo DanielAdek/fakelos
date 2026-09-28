@@ -5,6 +5,17 @@ import PagesMetaHead from '../components/PagesMetaHead';
 import { getActiveResume } from '../services/api';
 import { Resume } from '../types/api';
 
+// Ensure Cloudinary URL serves inline (for iframe preview)
+function toInlineUrl(url: string): string {
+	if (url.includes('/fl_inline/')) return url;
+	return url.replace('/upload/', '/upload/fl_inline/');
+}
+
+// Ensure Cloudinary URL serves as attachment (for download)
+function toDownloadUrl(url: string): string {
+	return url.replace('/fl_inline/', '/').replace('/upload/', '/upload/fl_attachment/');
+}
+
 function ResumePage() {
 	const [resume, setResume] = useState<Resume | null>(null);
 	const [loading, setLoading] = useState(true);
@@ -58,8 +69,7 @@ function ResumePage() {
 						{/* Download button */}
 						<div className="flex justify-center mb-6">
 							<a
-								href={resume.fileUrl.replace('/fl_inline/', '/')}
-								download
+								href={toDownloadUrl(resume.fileUrl)}
 								className="flex items-center gap-2 font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-6 py-3 duration-300"
 							>
 								<FiDownload className="text-lg" />
@@ -70,7 +80,7 @@ function ResumePage() {
 						{/* PDF Preview */}
 						<div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
 							<iframe
-								src={resume.fileUrl}
+								src={toInlineUrl(resume.fileUrl)}
 								className="w-full"
 								style={{ height: '80vh' }}
 								title="Resume Preview"
