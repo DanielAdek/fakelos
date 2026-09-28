@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { FiArrowDownCircle } from 'react-icons/fi';
+import { FiBriefcase, FiFileText } from 'react-icons/fi';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 
 function AppBanner() {
@@ -45,19 +46,28 @@ function AppBanner() {
 						duration: 0.9,
 						delay: 0.3,
 					}}
-					className="flex justify-center sm:block"
+					className="flex justify-center sm:justify-start gap-3 mt-12 mb-6 sm:mb-0"
 				>
-					<a
-						download="daniel-resume.pdf"
-						href="/files/daniel-resume.pdf"
-						className="font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-						aria-label="Download Resume"
+					<Link
+						href="/projects"
+						className="font-general-medium flex justify-center items-center w-36 sm:w-44 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-500 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-600 text-white duration-500"
+						aria-label="View Projects"
 					>
-						<FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
+						<FiBriefcase className="mr-2 sm:mr-3 h-5 w-5 sm:w-6 sm:h-6 duration-100" />
+						<span className="text-sm sm:text-lg duration-100">
+							Projects
+						</span>
+					</Link>
+					<Link
+						href="/resume"
+						className="font-general-medium flex justify-center items-center w-36 sm:w-44 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 dark:bg-ternary-dark focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 dark:text-gray-300 hover:text-white duration-500"
+						aria-label="View Resume"
+					>
+						<FiFileText className="mr-2 sm:mr-3 h-5 w-5 sm:w-6 sm:h-6 duration-100" />
 						<span className="text-sm sm:text-lg duration-100">
 							My Resume
 						</span>
-					</a>
+					</Link>
 				</motion.div>
 			</div>
 			<motion.div
