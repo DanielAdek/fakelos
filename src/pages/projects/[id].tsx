@@ -3,7 +3,31 @@ import { FiTag } from 'react-icons/fi';
 import PagesMetaHead from '../../components/PagesMetaHead';
 import { getProject } from '../../services/api';
 import { Project } from '../../types/api';
+import { projectsData } from '../../data/projectsData';
 import { GetServerSidePropsContext } from 'next';
+
+// Convert a static project to the API shape
+function staticToProject(p: (typeof projectsData)[number]): Project {
+	return {
+		_id: p._id,
+		title: p.title,
+		url: p.url,
+		category: p.category,
+		type: p.type,
+		img: p.img,
+		ProjectHeader: p.ProjectHeader,
+		ProjectImages: p.ProjectImages.map((img) => ({ title: img.title, img: img.img })),
+		ProjectInfo: {
+			ClientHeading: p.ProjectInfo.ClientHeading,
+			CompanyInfo: p.ProjectInfo.CompanyInfo.map((c) => ({ title: c.title, details: c.details, link: c.link })),
+			ObjectivesHeading: p.ProjectInfo.ObjectivesHeading,
+			ObjectivesDetails: p.ProjectInfo.ObjectivesDetails,
+			Technologies: p.ProjectInfo.Technologies,
+			ProjectDetailsHeading: p.ProjectInfo.ProjectDetailsHeading,
+			ProjectDetails: p.ProjectInfo.ProjectDetails.filter((d) => d.point).map((d) => ({ point: d.point, details: d.details })),
+		},
+	};
+}
 
 function ProjectSingle(props: { project: Project }) {
 	const { project } = props;
@@ -142,19 +166,20 @@ function ProjectSingle(props: { project: Project }) {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
 	const { id } = context.query;
+	const idStr = id as string;
+
+	// Check static data first (ids like "static-1", "static-2", ...)
+	const staticProject = projectsData.find((p) => p._id === idStr);
+	if (staticProject) {
+		return { props: { project: staticToProject(staticProject) } };
+	}
+
+	// Otherwise fetch from API (MongoDB ObjectId)
 	try {
-		const res = await getProject(id as string);
-		return {
-			props: {
-				project: res.data || null,
-			},
-		};
+		const res = await getProject(idStr);
+		return { props: { project: res.data || null } };
 	} catch {
-		return {
-			props: {
-				project: null,
-			},
-		};
+		return { props: { project: null } };
 	}
 }
 

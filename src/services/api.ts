@@ -1,4 +1,4 @@
-import { IApiResponse, Project, About, Client, Contact } from '../types/api';
+import { IApiResponse, Project, About, Client, Contact, Resume } from '../types/api';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5050/api';
 
@@ -32,6 +32,11 @@ export async function getAbout(): Promise<IApiResponse<About[]>> {
 // Clients
 export async function getClients(): Promise<IApiResponse<Client[]>> {
   return fetchApi<IApiResponse<Client[]>>('/clients');
+}
+
+// Resume
+export async function getActiveResume(): Promise<IApiResponse<Resume>> {
+  return fetchApi<IApiResponse<Resume>>('/resumes/active');
 }
 
 // Contact

@@ -76,3 +76,13 @@ export interface Contact {
   subject?: string;
   message: string;
 }
+
+export interface Resume {
+  _id: string;
+  title: string;
+  fileUrl: string;
+  description: string;
+  isActive: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}

@@ -3,7 +3,7 @@ import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
 const contacts = [
 	{
 		id: 1,
-		name: '5, Idris Adetutu, Voera Estate, Ogun State, Nigeria',
+		name: 'ZONA KELEM 34 ACHADA SANTO ANTONIO',
 		icon: <FiMapPin />,
 	},
 	{
@@ -13,7 +13,7 @@ const contacts = [
 	},
 	{
 		id: 3,
-		name: '+2348148776315, +2348182089681',
+		name: '(+238) 538 13 06, (+238) 979 75 21',
 		icon: <FiPhone />,
 	},
 ];

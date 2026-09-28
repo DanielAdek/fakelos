@@ -11,6 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const projectsData = [
 	{
 		id: 1,
+		_id: 'static-1',
 		title: 'Money Counsellor Application',
 		url: 'https://moneycounselor.com',
 		category: 'Pension Application',
@@ -168,8 +169,9 @@ export const projectsData = [
 	},
 	{
 		id: 2,
+		_id: 'static-2',
 		title: 'Wayabank',
-		url: 'staging.wayabank.ng',
+		url: 'wayabank.ng',
 		category: 'Fintech Application',
 		type: "Fintech",
 		img: '/images/wayabank.png',
@@ -202,7 +204,7 @@ export const projectsData = [
 					id: uuidv4(),
 					title: 'Name',
 					details: 'WAYA MULTILINK COMPANY LIMITED',
-					link: "https://staging.wayabank.ng"
+					link: "https://wayabank.ng"
 				},
 				{
 					id: uuidv4(),
@@ -214,7 +216,7 @@ export const projectsData = [
 					id: uuidv4(),
 					title: 'Website',
 					details: 'wayabank.ng',
-					link: "https://staging.wayabank.ng"
+					link: "https://wayabank.ng"
 				},
 				{
 					id: uuidv4(),
@@ -337,8 +339,9 @@ export const projectsData = [
 	},
 	{
 		id: 3,
+		_id: 'static-3',
 		title: 'WayaGram',
-		url: 'app.staging.wayagram.ng',
+		url: 'app.wayagram.ng',
 		category: 'Social Media Application',
 		type: "Social Media",
 		img: '/images/wayagram-handle.png',
@@ -371,7 +374,7 @@ export const projectsData = [
 					id: uuidv4(),
 					title: 'Name',
 					details: 'WAYA MULTILINKS LIMITED',
-					link: "https://staging.wayagram.ng"
+					link: "https://wayagram.ng"
 				},
 				{
 					id: uuidv4(),
@@ -383,7 +386,7 @@ export const projectsData = [
 					id: uuidv4(),
 					title: 'Website',
 					details: 'wayagram.ng',
-					link: "https://staging.wayagram.ng"
+					link: "https://wayagram.ng"
 				},
 				{
 					id: uuidv4(),
@@ -491,6 +494,7 @@ export const projectsData = [
 	},
 	{
 		id: 4,
+		_id: 'static-4',
 		title: 'Blackbox',
 		url: 'https//blackboxservic.monster',
 		category: 'Telematics application',
@@ -638,6 +642,7 @@ export const projectsData = [
 	},
 	{
 		id: 5,
+		_id: 'static-5',
 		title: 'Bluerock',
 		url: 'https://www.bluerocknigeria.com/',
 		category: 'Booking Application',
@@ -809,132 +814,132 @@ export const projectsData = [
 			// ],
 		},
 	},
-	{
-		id: 6,
-		title: 'School Delight',
-		url: '...',
-		category: "Academic Application",
-		type: "mobile",
-		img: '/images/mobile.png',
-		ProjectHeader: {
-			title: '',
-			publishDate: 'Jul 26, 2021',
-			tags: 'Mobile / Google Play Store',
-		},
-		ProjectImages: [
-			{
-				id: uuidv4(),
-				title: 'School Delight Student Dashboard',
-				img: '/images/mobile.png',
-			},
-			{
-				id: uuidv4(),
-				title: 'School Delight Login',
-				img: '/images/mobile-2.png',
-			}
-		],
-		ProjectInfo: {
-			ClientHeading: 'About Client',
-			CompanyInfo: [
-				{
-					id: uuidv4(),
-					title: 'Name',
-					details: 'School Delight Academic',
-					link: ""
-				},
-				{
-					id: uuidv4(),
-					title: 'Services',
-					details: 'Mobile Development',
-					link: ""
-				},
-				{
-					id: uuidv4(),
-					title: 'Website',
-					details: '',
-					link: ""
-				},
-				{
-					id: uuidv4(),
-					title: 'Phone',
-					details: '(Manager) +234 803 916 2139',
-					link: ""
-				},
-			],
-			ObjectivesHeading: 'Objective',
-			ObjectivesDetails:
-				'To create an academic application that runs on any mobile device. This allows student, parent/guidance and staff of the academic to access the school portal, and monitor academic performance of the student',
-			Technologies: [
-				{
-					title: 'Tools & Technologies',
-					techs: [
-						'Dart',
-						'Flutter',
-						'Flutter Provider',
-					],
-				},
-			],
-			ProjectDetailsHeading: 'My Contributions',
-			ProjectDetails: [
-				{
-					id: uuidv4(),
-					point: "UI Design Implementation",
-					details: [
-						`Worked on the authentication designed screen using flutter`,
-						`Working on the student dashboard screen`
-					]
-				},
-				{
-					id: uuidv4(),
-					point: "",
-					details: []
-				},
-				{
-					id: uuidv4(),
-					point: "",
-					details: []
-				},
-				{
-					id: uuidv4(),
-					point: "",
-					details: []
-				},
-			],
-			SocialSharingHeading: '',
-			// SocialSharing: [
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Twitter',
-			// 		icon: <FiTwitter />,
-			// 		url: 'https://twitter.com/realstoman',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Instagram',
-			// 		icon: <FiInstagram />,
-			// 		url: 'https://instagram.com/realstoman',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Facebook',
-			// 		icon: <FiFacebook />,
-			// 		url: 'https://facebook.com/',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'LinkedIn',
-			// 		icon: <FiLinkedin />,
-			// 		url: 'https://linkedin.com/',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Youtube',
-			// 		icon: <FiYoutube />,
-			// 		url: 'https://www.youtube.com/c/StomanStudio',
-			// 	},
-			// ],
-		},
-	},
+	// {
+	// 	id: 6,
+	// 	title: 'School Delight',
+	// 	url: '...',
+	// 	category: "Academic Application",
+	// 	type: "mobile",
+	// 	img: '/images/mobile.png',
+	// 	ProjectHeader: {
+	// 		title: '',
+	// 		publishDate: 'Jul 26, 2021',
+	// 		tags: 'Mobile / Google Play Store',
+	// 	},
+	// 	ProjectImages: [
+	// 		{
+	// 			id: uuidv4(),
+	// 			title: 'School Delight Student Dashboard',
+	// 			img: '/images/mobile.png',
+	// 		},
+	// 		{
+	// 			id: uuidv4(),
+	// 			title: 'School Delight Login',
+	// 			img: '/images/mobile-2.png',
+	// 		}
+	// 	],
+	// 	ProjectInfo: {
+	// 		ClientHeading: 'About Client',
+	// 		CompanyInfo: [
+	// 			{
+	// 				id: uuidv4(),
+	// 				title: 'Name',
+	// 				details: 'School Delight Academic',
+	// 				link: ""
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				title: 'Services',
+	// 				details: 'Mobile Development',
+	// 				link: ""
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				title: 'Website',
+	// 				details: '',
+	// 				link: ""
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				title: 'Phone',
+	// 				details: '(Manager) +234 803 916 2139',
+	// 				link: ""
+	// 			},
+	// 		],
+	// 		ObjectivesHeading: 'Objective',
+	// 		ObjectivesDetails:
+	// 			'To create an academic application that runs on any mobile device. This allows student, parent/guidance and staff of the academic to access the school portal, and monitor academic performance of the student',
+	// 		Technologies: [
+	// 			{
+	// 				title: 'Tools & Technologies',
+	// 				techs: [
+	// 					'Dart',
+	// 					'Flutter',
+	// 					'Flutter Provider',
+	// 				],
+	// 			},
+	// 		],
+	// 		ProjectDetailsHeading: 'My Contributions',
+	// 		ProjectDetails: [
+	// 			{
+	// 				id: uuidv4(),
+	// 				point: "UI Design Implementation",
+	// 				details: [
+	// 					`Worked on the authentication designed screen using flutter`,
+	// 					`Working on the student dashboard screen`
+	// 				]
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				point: "",
+	// 				details: []
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				point: "",
+	// 				details: []
+	// 			},
+	// 			{
+	// 				id: uuidv4(),
+	// 				point: "",
+	// 				details: []
+	// 			},
+	// 		],
+	// 		SocialSharingHeading: '',
+	// 		// SocialSharing: [
+	// 		// 	{
+	// 		// 		id: uuidv4(),
+	// 		// 		name: 'Twitter',
+	// 		// 		icon: <FiTwitter />,
+	// 		// 		url: 'https://twitter.com/realstoman',
+	// 		// 	},
+	// 		// 	{
+	// 		// 		id: uuidv4(),
+	// 		// 		name: 'Instagram',
+	// 		// 		icon: <FiInstagram />,
+	// 		// 		url: 'https://instagram.com/realstoman',
+	// 		// 	},
+	// 		// 	{
+	// 		// 		id: uuidv4(),
+	// 		// 		name: 'Facebook',
+	// 		// 		icon: <FiFacebook />,
+	// 		// 		url: 'https://facebook.com/',
+	// 		// 	},
+	// 		// 	{
+	// 		// 		id: uuidv4(),
+	// 		// 		name: 'LinkedIn',
+	// 		// 		icon: <FiLinkedin />,
+	// 		// 		url: 'https://linkedin.com/',
+	// 		// 	},
+	// 		// 	{
+	// 		// 		id: uuidv4(),
+	// 		// 		name: 'Youtube',
+	// 		// 		icon: <FiYoutube />,
+	// 		// 		url: 'https://www.youtube.com/c/StomanStudio',
+	// 		// 	},
+	// 		// ],
+	// 	},
+	// },
 ];
 
 

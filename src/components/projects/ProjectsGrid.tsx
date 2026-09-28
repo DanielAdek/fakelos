@@ -4,21 +4,48 @@ import ProjectSingle from './ProjectSingle';
 import ProjectsFilter from './ProjectsFilter';
 import { getProjects } from '../../services/api';
 import { Project } from '../../types/api';
+import { projectsData } from '../../data/projectsData';
+
+// Convert static data to match API shape
+const staticProjects: Project[] = projectsData.map((p) => ({
+	_id: p._id,
+	title: p.title,
+	url: p.url,
+	category: p.category,
+	type: p.type,
+	img: p.img,
+	ProjectHeader: p.ProjectHeader,
+	ProjectImages: p.ProjectImages.map((img) => ({ title: img.title, img: img.img })),
+	ProjectInfo: {
+		ClientHeading: p.ProjectInfo.ClientHeading,
+		CompanyInfo: p.ProjectInfo.CompanyInfo.map((c) => ({ title: c.title, details: c.details, link: c.link })),
+		ObjectivesHeading: p.ProjectInfo.ObjectivesHeading,
+		ObjectivesDetails: p.ProjectInfo.ObjectivesDetails,
+		Technologies: p.ProjectInfo.Technologies,
+		ProjectDetailsHeading: p.ProjectInfo.ProjectDetailsHeading,
+		ProjectDetails: p.ProjectInfo.ProjectDetails.filter((d) => d.point).map((d) => ({ point: d.point, details: d.details })),
+	},
+}));
 
 function ProjectsGrid() {
-	const [projects, setProjects] = useState<Project[]>([]);
+	const [apiProjects, setApiProjects] = useState<Project[]>([]);
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		getProjects()
-			.then((res) => setProjects((res.data as unknown as Project[]) || []))
-			.catch(console.error)
+			.then((res) => setApiProjects((res.data as unknown as Project[]) || []))
+			.catch(() => {})
 			.finally(() => setLoading(false));
 	}, []);
 
-	const filteredProjects = projects.filter((item) => {
+	// Merge: API projects first, then static (skip static if title already exists from API)
+	const apiTitles = new Set(apiProjects.map((p) => p.title.toLowerCase()));
+	const uniqueStaticProjects = staticProjects.filter((p) => !apiTitles.has(p.title.toLowerCase()));
+	const allProjects = [...apiProjects, ...uniqueStaticProjects];
+
+	const filteredProjects = allProjects.filter((item) => {
 		const matchesSearch = searchProject
 			? item.title.toLowerCase().includes(searchProject.toLowerCase())
 			: true;
