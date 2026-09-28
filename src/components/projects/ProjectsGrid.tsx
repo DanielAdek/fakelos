@@ -36,7 +36,7 @@ function ProjectsGrid() {
 	useEffect(() => {
 		getProjects()
 			.then((res) => setApiProjects((res.data as unknown as Project[]) || []))
-			.catch(() => {})
+			.catch((err) => console.error('Failed to fetch projects from API:', err))
 			.finally(() => setLoading(false));
 	}, []);
 
