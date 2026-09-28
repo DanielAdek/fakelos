@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiDownload } from 'react-icons/fi';
 import PagesMetaHead from '../components/PagesMetaHead';
 import { getActiveResume } from '../services/api';
 import { Resume } from '../types/api';
 
-// Get the raw Cloudinary URL (strip any transformation flags)
-function getRawUrl(url: string): string {
-	return url.replace('/fl_inline/', '/').replace('/fl_attachment/', '/');
-}
-
 // Google Docs Viewer renders PDFs inline in an iframe
 function toPreviewUrl(url: string): string {
-	const raw = getRawUrl(url);
+	const raw = url.replace('/fl_inline/', '/').replace('/fl_attachment/', '/');
 	return `https://docs.google.com/viewer?url=${encodeURIComponent(raw)}&embedded=true`;
 }
 
@@ -65,20 +59,6 @@ function ResumePage() {
 					</div>
 				) : (
 					<div>
-						{/* Download button */}
-						<div className="flex justify-center mb-6">
-							<a
-								href={getRawUrl(resume.fileUrl)}
-								download
-								target="_blank"
-								rel="noopener noreferrer"
-								className="flex items-center gap-2 font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-6 py-3 duration-300"
-							>
-								<FiDownload className="text-lg" />
-								Download Resume
-							</a>
-						</div>
-
 						{/* PDF Preview via Google Docs Viewer */}
 						<div className="bg-white dark:bg-ternary-dark rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
 							<iframe
