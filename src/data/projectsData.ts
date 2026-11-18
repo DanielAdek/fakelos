@@ -495,25 +495,25 @@ export const projectsData = [
 	{
 		id: 4,
 		_id: 'static-4',
-		title: 'Blackbox',
-		url: 'https//blackboxservic.monster',
-		category: 'Telematics application',
+		title: 'ContainerIQ',
+		url: 'https://containeriq.tech',
+		category: 'Container Telematics & Insurance Platform',
 		type: "Telematics",
 		img: '/images/blackbox-project.png',
 		ProjectHeader: {
-			title: 'Project Management UI',
-			publishDate: 'Jul 26, 2021',
+			title: 'ContainerIQ Platform',
+			publishDate: 'Mar 9, 2026',
 			tags: 'API / Backend / Frontend',
 		},
 		ProjectImages: [
 			{
 				id: uuidv4(),
-				title: 'Blackbox Dashboard',
+				title: 'ContainerIQ Dashboard',
 				img: '/images/blackbox-project.png',
 			},
 			{
 				id: uuidv4(),
-				title: 'Blackbox Driver Page',
+				title: 'ContainerIQ Consignment View',
 				img: '/images/blackbox-driver.png',
 			},
 		],
@@ -524,19 +524,19 @@ export const projectsData = [
 					id: uuidv4(),
 					title: 'Name',
 					details: 'TSARON TELEMATICS COMPANY LIMITED',
-					link: "https://blackboxservice.monster"
+					link: "https://containeriq.tech"
 				},
 				{
 					id: uuidv4(),
 					title: 'Services',
-					details: 'API Developement',
+					details: 'Container Telematics & Insurance',
 					link: ""
 				},
 				{
 					id: uuidv4(),
 					title: 'Website',
-					details: 'blackboxservice.monster',
-					link: "https://blackboxservice.monster"
+					details: 'containeriq.tech',
+					link: "https://containeriq.tech"
 				},
 				{
 					id: uuidv4(),
@@ -547,7 +547,7 @@ export const projectsData = [
 			],
 			ObjectivesHeading: 'Objective',
 			ObjectivesDetails:
-				"This is a telematics application that allows users to be able to monitor the life cycle of their vehicle. They will be able to monitor trip, fuel, and fault of the vehicle",
+				"ContainerIQ is Nigeria's first integrated container telematics, insurance, and compliance platform. It creates a digital ecosystem where insurance companies price risk using real-time container data, shippers track cargo end-to-end, fleet operators prove lawful movement, and GPS e-Lock devices are managed as regulated financial instruments across custodians.",
 			Technologies: [
 				{
 					title: 'Tools & Technologies',
@@ -555,14 +555,17 @@ export const projectsData = [
 						'Typescript',
 						'NestJS',
 						'NodeJS',
-						"AWS EC2",
-						"AWS S3",
-						"Trello",
+						"PostgreSQL",
+						"TypeORM",
+						"Socket.IO (WebSockets)",
 						"Docker",
-						"CI/CD",
+						"GitHub Actions CI/CD",
+						"Cloudinary",
+						"Swagger/OpenAPI",
+						"JWT & 2FA Auth",
+						"Winston & Logtail",
+						"PM2",
 						'ReactJs',
-						"VueJs",
-						"Traccar API services",
 					],
 				},
 			],
@@ -570,74 +573,42 @@ export const projectsData = [
 			ProjectDetails: [
 				{
 					id: uuidv4(),
-					point: "Telematics Data Processing Pipeline",
+					point: "Clean Architecture & Multi-Tenant Onboarding",
 					details: [
-						`Designing and implementing a robust data processing pipeline to ingest, store, and analyze telematics data collected from vehicles in real-time.`,
-						`Developing APIs and microservices to handle the ingestion of raw telemetry data, parsing it into structured formats, and storing it in a scalable and fault-tolerant database which is MySQL.`,
-						`Implementing data validation and normalization processes to ensure data integrity and consistency across different types of vehicles and telemetry sources.`
+						`Architected the backend using clean/layered architecture: domain layer (entities, interfaces, repositories, services), application layer, infrastructure layer (persistence, config, security), and presentation layer (controllers, DTOs, WebSocket gateways).`,
+						`Designed and built a universal sign-up system supporting five distinct user types: Insurance Companies, Shippers, Fleet Operators, Shipping Companies, and Terminal Operators, each with role-specific onboarding flows.`,
+						`Implemented JWT + Passport authentication with OTP, 2FA (QR code), bcrypt hashing, and granular role/permission management across all stakeholder dashboards.`
 					]
 				},
 				{
 					id: uuidv4(),
-					point: "API Security and Access Control",
+					point: "GPS e-Lock Device Lifecycle & IoT Integration",
 					details: [
-						`Implementing robust authentication and authorization mechanisms to secure access to Blackbox APIs and data resources`,
-						`Enforcing HTTPS encryption, input validation, and rate limiting to protect against common security threats such as injection attacks and data breaches`,
-						`JSON Web Tokens (JWT) for user authentication and role-based access control (RBAC) for fine-grained authorization.`
+						`Engineered a full device lifecycle system managing GPS e-Lock devices as regulated financial instruments — from assignment, through transit tracking, to decommissioning and inventory return.`,
+						`Built IoT device management modules with iCloud device integration, device inspection workflows, and custody transfer tracking with blockchain-backed immutable audit records.`,
+						`Implemented battery governance rules with real-time monitoring, automated telematics alerts at threshold levels, and scorecard impact calculations for custodian accountability.`
 					]
 				},
 				{
 					id: uuidv4(),
-					point: "Real-time Monitoring and Alerts",
+					point: "3-Pillar Scorecard & Behavioral Scoring Engine",
 					details: [
-						`Building real-time monitoring and alerting systems to provide instant insights into vehicle health, performance, and location.`,
-						`Implementing event-driven architecture using technologies like WebSockets or Server-Sent Events (SSE) to push real-time updates to client applications and dashboards.`,
-						`Developing alerting mechanisms based on predefined thresholds or anomaly detection algorithms to notify stakeholders of critical events such as accidents, engine faults, or unauthorized usage.`
+						`Developed a mathematically sound three-pillar performance framework (On-Time, Compliance, Safety) that evaluates all ecosystem participants with weighted composite scores.`,
+						`Implemented automated event deduction matrices — battery discipline, on-time discipline, and safety discipline — with custodian-specific weighting structures.`,
+						`Built rating band system (Gold/Silver/Watchlist/Probation/Restricted) with real consequences: priority assignment, insurance loading adjustments, and suspension triggers.`
 					]
 				},
 				{
 					id: uuidv4(),
-					point: "Geospatial Data Processing and Visualization",
+					point: "Consignment, Insurance & Real-Time Tracking",
 					details: [
-						`Developing APIs to calculate and visualize metrics such as vehicle speed, distance traveled, fuel consumption, and route deviations on interactive maps.`,
-						`Integrating geospatial data processing tools and libraries to analyze vehicle movement, route optimization, and geo-fencing functionalities.`,
-						`Integrated a third party service (traccar) to render geospatial data efficiently and provide rich visualizations for monitoring vehicle activities and optimizing fleet operations.`
+						`Built the consignment creation pipeline handling shipment requests with container booking, route selection, fleet/truck dispatch, driver handoff, and insurance policy binding — all with gate event tracking at terminals.`,
+						`Developed real-time container tracking via Socket.IO WebSocket gateways with seal status monitoring, geofencing alerts, route deviation detection, and active-trip dashboards.`,
+						`Integrated full insurance & underwriting workflow: claims management, risk assessments, evidence document vaults, regulatory compliance reports, and partner payout processing through the wallet/payment system.`
 					]
 				},
 			],
 			SocialSharingHeading: '',
-			// SocialSharing: [
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Twitter',
-			// 		icon: <FiTwitter />,
-			// 		url: 'https://twitter.com/daniel-adek',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Instagram',
-			// 		icon: <FiInstagram />,
-			// 		url: 'https://instagram.com/realstoman',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Facebook',
-			// 		icon: <FiFacebook />,
-			// 		url: 'https://facebook.com/',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'LinkedIn',
-			// 		icon: <FiLinkedin />,
-			// 		url: 'https://linkedin.com/',
-			// 	},
-			// 	{
-			// 		id: uuidv4(),
-			// 		name: 'Youtube',
-			// 		icon: <FiYoutube />,
-			// 		url: 'https://www.youtube.com/c/StomanStudio',
-			// 	},
-			// ],
 		},
 	},
 	{
