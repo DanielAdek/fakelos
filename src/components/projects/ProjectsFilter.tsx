@@ -4,9 +4,7 @@ import { Project } from "../../types/api";
 const defaultTypes = [
 	'Fintech',
 	"Telematics",
-	'Social Media',
-	'Booking',
-	"Mobile"
+	'Social Media'
 ];
 
 function ProjectsFilter({ setSelectProject, projects = [] }: { setSelectProject: React.SetStateAction<any>; projects?: Project[] }) {
