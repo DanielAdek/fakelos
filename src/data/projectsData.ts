@@ -495,125 +495,6 @@ export const projectsData = [
 	{
 		id: 4,
 		_id: 'static-4',
-		title: 'ContainerIQ',
-		url: 'https://containeriq.tech',
-		category: 'Container Telematics & Insurance Platform',
-		type: "Telematics",
-		img: '/images/blackbox-project.png',
-		ProjectHeader: {
-			title: 'ContainerIQ Platform',
-			publishDate: 'Mar 9, 2026',
-			tags: 'API / Backend / Frontend',
-		},
-		ProjectImages: [
-			{
-				id: uuidv4(),
-				title: 'ContainerIQ Dashboard',
-				img: '/images/blackbox-project.png',
-			},
-			{
-				id: uuidv4(),
-				title: 'ContainerIQ Consignment View',
-				img: '/images/blackbox-driver.png',
-			},
-		],
-		ProjectInfo: {
-			ClientHeading: 'About Company',
-			CompanyInfo: [
-				{
-					id: uuidv4(),
-					title: 'Name',
-					details: 'TSARON TELEMATICS COMPANY LIMITED',
-					link: "https://containeriq.tech"
-				},
-				{
-					id: uuidv4(),
-					title: 'Services',
-					details: 'Container Telematics & Insurance',
-					link: ""
-				},
-				{
-					id: uuidv4(),
-					title: 'Website',
-					details: 'containeriq.tech',
-					link: "https://containeriq.tech"
-				},
-				{
-					id: uuidv4(),
-					title: 'Phone',
-					details: '(Manager) +234 802 581 4668',
-					link: ""
-				},
-			],
-			ObjectivesHeading: 'Objective',
-			ObjectivesDetails:
-				"ContainerIQ is Nigeria's first integrated container telematics, insurance, and compliance platform. It creates a digital ecosystem where insurance companies price risk using real-time container data, shippers track cargo end-to-end, fleet operators prove lawful movement, and GPS e-Lock devices are managed as regulated financial instruments across custodians.",
-			Technologies: [
-				{
-					title: 'Tools & Technologies',
-					techs: [
-						'Typescript',
-						'NestJS',
-						'NodeJS',
-						"PostgreSQL",
-						"TypeORM",
-						"Socket.IO (WebSockets)",
-						"Docker",
-						"GitHub Actions CI/CD",
-						"Cloudinary",
-						"Swagger/OpenAPI",
-						"JWT & 2FA Auth",
-						"Winston & Logtail",
-						"PM2",
-						'ReactJs',
-					],
-				},
-			],
-			ProjectDetailsHeading: 'My Contributions',
-			ProjectDetails: [
-				{
-					id: uuidv4(),
-					point: "Clean Architecture & Multi-Tenant Onboarding",
-					details: [
-						`Architected the backend using clean/layered architecture: domain layer (entities, interfaces, repositories, services), application layer, infrastructure layer (persistence, config, security), and presentation layer (controllers, DTOs, WebSocket gateways).`,
-						`Designed and built a universal sign-up system supporting five distinct user types: Insurance Companies, Shippers, Fleet Operators, Shipping Companies, and Terminal Operators, each with role-specific onboarding flows.`,
-						`Implemented JWT + Passport authentication with OTP, 2FA (QR code), bcrypt hashing, and granular role/permission management across all stakeholder dashboards.`
-					]
-				},
-				{
-					id: uuidv4(),
-					point: "GPS e-Lock Device Lifecycle & IoT Integration",
-					details: [
-						`Engineered a full device lifecycle system managing GPS e-Lock devices as regulated financial instruments — from assignment, through transit tracking, to decommissioning and inventory return.`,
-						`Built IoT device management modules with iCloud device integration, device inspection workflows, and custody transfer tracking with blockchain-backed immutable audit records.`,
-						`Implemented battery governance rules with real-time monitoring, automated telematics alerts at threshold levels, and scorecard impact calculations for custodian accountability.`
-					]
-				},
-				{
-					id: uuidv4(),
-					point: "3-Pillar Scorecard & Behavioral Scoring Engine",
-					details: [
-						`Developed a mathematically sound three-pillar performance framework (On-Time, Compliance, Safety) that evaluates all ecosystem participants with weighted composite scores.`,
-						`Implemented automated event deduction matrices — battery discipline, on-time discipline, and safety discipline — with custodian-specific weighting structures.`,
-						`Built rating band system (Gold/Silver/Watchlist/Probation/Restricted) with real consequences: priority assignment, insurance loading adjustments, and suspension triggers.`
-					]
-				},
-				{
-					id: uuidv4(),
-					point: "Consignment, Insurance & Real-Time Tracking",
-					details: [
-						`Built the consignment creation pipeline handling shipment requests with container booking, route selection, fleet/truck dispatch, driver handoff, and insurance policy binding — all with gate event tracking at terminals.`,
-						`Developed real-time container tracking via Socket.IO WebSocket gateways with seal status monitoring, geofencing alerts, route deviation detection, and active-trip dashboards.`,
-						`Integrated full insurance & underwriting workflow: claims management, risk assessments, evidence document vaults, regulatory compliance reports, and partner payout processing through the wallet/payment system.`
-					]
-				},
-			],
-			SocialSharingHeading: '',
-		},
-	},
-	{
-		id: 5,
-		_id: 'static-5',
 		title: 'Bluerock',
 		url: 'https://www.bluerocknigeria.com/',
 		category: 'Booking Application',
@@ -783,6 +664,125 @@ export const projectsData = [
 			// 		url: 'https://www.youtube.com/c/DanielAdek',
 			// 	},
 			// ],
+		},
+	},
+	{
+		id: 5,
+		_id: 'static-5',
+		title: 'ContainerIQ',
+		url: 'https://containeriq.tech',
+		category: 'Container Telematics & Insurance Platform',
+		type: "Telematics",
+		img: '/images/blackbox-project.png',
+		ProjectHeader: {
+			title: 'ContainerIQ Platform',
+			publishDate: 'Mar 9, 2026',
+			tags: 'API / Backend / Frontend',
+		},
+		ProjectImages: [
+			{
+				id: uuidv4(),
+				title: 'ContainerIQ Dashboard',
+				img: '/images/blackbox-project.png',
+			},
+			{
+				id: uuidv4(),
+				title: 'ContainerIQ Consignment View',
+				img: '/images/blackbox-driver.png',
+			},
+		],
+		ProjectInfo: {
+			ClientHeading: 'About Company',
+			CompanyInfo: [
+				{
+					id: uuidv4(),
+					title: 'Name',
+					details: 'TSARON TELEMATICS COMPANY LIMITED',
+					link: "https://containeriq.tech"
+				},
+				{
+					id: uuidv4(),
+					title: 'Services',
+					details: 'Container Telematics & Insurance',
+					link: ""
+				},
+				{
+					id: uuidv4(),
+					title: 'Website',
+					details: 'containeriq.tech',
+					link: "https://containeriq.tech"
+				},
+				{
+					id: uuidv4(),
+					title: 'Phone',
+					details: '(Manager) +234 802 581 4668',
+					link: ""
+				},
+			],
+			ObjectivesHeading: 'Objective',
+			ObjectivesDetails:
+				"ContainerIQ is Nigeria's first integrated container telematics, insurance, and compliance platform. It creates a digital ecosystem where insurance companies price risk using real-time container data, shippers track cargo end-to-end, fleet operators prove lawful movement, and GPS e-Lock devices are managed as regulated financial instruments across custodians.",
+			Technologies: [
+				{
+					title: 'Tools & Technologies',
+					techs: [
+						'Typescript',
+						'NestJS',
+						'NodeJS',
+						"PostgreSQL",
+						"TypeORM",
+						"Socket.IO (WebSockets)",
+						"Docker",
+						"GitHub Actions CI/CD",
+						"Cloudinary",
+						"Swagger/OpenAPI",
+						"JWT & 2FA Auth",
+						"Winston & Logtail",
+						"PM2",
+						'ReactJs',
+					],
+				},
+			],
+			ProjectDetailsHeading: 'My Contributions',
+			ProjectDetails: [
+				{
+					id: uuidv4(),
+					point: "Clean Architecture & Multi-Tenant Onboarding",
+					details: [
+						`Architected the backend using clean/layered architecture: domain layer (entities, interfaces, repositories, services), application layer, infrastructure layer (persistence, config, security), and presentation layer (controllers, DTOs, WebSocket gateways).`,
+						`Designed and built a universal sign-up system supporting five distinct user types: Insurance Companies, Shippers, Fleet Operators, Shipping Companies, and Terminal Operators, each with role-specific onboarding flows.`,
+						`Implemented JWT + Passport authentication with OTP, 2FA (QR code), bcrypt hashing, and granular role/permission management across all stakeholder dashboards.`
+					]
+				},
+				{
+					id: uuidv4(),
+					point: "GPS e-Lock Device Lifecycle & IoT Integration",
+					details: [
+						`Engineered a full device lifecycle system managing GPS e-Lock devices as regulated financial instruments — from assignment, through transit tracking, to decommissioning and inventory return.`,
+						`Built IoT device management modules with iCloud device integration, device inspection workflows, and custody transfer tracking with blockchain-backed immutable audit records.`,
+						`Implemented battery governance rules with real-time monitoring, automated telematics alerts at threshold levels, and scorecard impact calculations for custodian accountability.`
+					]
+				},
+				{
+					id: uuidv4(),
+					point: "3-Pillar Scorecard & Behavioral Scoring Engine",
+					details: [
+						`Developed a mathematically sound three-pillar performance framework (On-Time, Compliance, Safety) that evaluates all ecosystem participants with weighted composite scores.`,
+						`Implemented automated event deduction matrices — battery discipline, on-time discipline, and safety discipline — with custodian-specific weighting structures.`,
+						`Built rating band system (Gold/Silver/Watchlist/Probation/Restricted) with real consequences: priority assignment, insurance loading adjustments, and suspension triggers.`
+					]
+				},
+				{
+					id: uuidv4(),
+					point: "Consignment, Insurance & Real-Time Tracking",
+					details: [
+						`Built the consignment creation pipeline handling shipment requests with container booking, route selection, fleet/truck dispatch, driver handoff, and insurance policy binding — all with gate event tracking at terminals.`,
+						`Developed real-time container tracking via Socket.IO WebSocket gateways with seal status monitoring, geofencing alerts, route deviation detection, and active-trip dashboards.`,
+						`Integrated full insurance & underwriting workflow: claims management, risk assessments, evidence document vaults, regulatory compliance reports, and partner payout processing through the wallet/payment system.`
+					]
+				},
+			],
+			SocialSharingHeading: '',
 		},
 	},
 	// {

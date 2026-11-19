@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { Project } from "../../types/api";
 
-const selectOptions = [
+const defaultTypes = [
 	'Fintech',
 	"Telematics",
 	'Social Media',
@@ -8,8 +9,14 @@ const selectOptions = [
 	"Mobile"
 ];
 
-function ProjectsFilter({ setSelectProject }: { setSelectProject: React.SetStateAction<any>}) {
+function ProjectsFilter({ setSelectProject, projects = [] }: { setSelectProject: React.SetStateAction<any>; projects?: Project[] }) {
 	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => setSelectProject(event.target.value);
+
+	const selectOptions = useMemo(() => {
+		const projectTypes = projects.map((p) => p.type.charAt(0).toUpperCase() + p.type.slice(1));
+		const all = new Set([...defaultTypes, ...projectTypes]);
+		return Array.from(all).sort();
+	}, [projects]);
 
 	return (
 		<select

@@ -27,7 +27,7 @@ const staticProjects: Project[] = projectsData.map((p) => ({
 	},
 }));
 
-function ProjectsGrid() {
+function ProjectsGrid({ limit }: { limit?: number } = {}) {
 	const [apiProjects, setApiProjects] = useState<Project[]>([]);
 	const [searchProject, setSearchProject] = useState('');
 	const [selectProject, setSelectProject] = useState('');
@@ -45,6 +45,7 @@ function ProjectsGrid() {
 	const uniqueStaticProjects = staticProjects.filter((p) => !apiTitles.has(p.title.toLowerCase()));
 	const allProjects = [...apiProjects, ...uniqueStaticProjects];
 
+	const isFiltering = searchProject || selectProject;
 	const filteredProjects = allProjects.filter((item) => {
 		const matchesSearch = searchProject
 			? item.title.toLowerCase().includes(searchProject.toLowerCase())
@@ -53,6 +54,7 @@ function ProjectsGrid() {
 		const matchesCategory = selectProject ? type.includes(selectProject) : true;
 		return matchesSearch && matchesCategory;
 	});
+	const displayedProjects = limit && !isFiltering ? filteredProjects.slice(0, limit) : filteredProjects;
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
 		setSearchProject(event.target.value);
@@ -85,7 +87,7 @@ function ProjectsGrid() {
 							aria-label="Name"
 						/>
 					</div>
-					<ProjectsFilter setSelectProject={setSelectProject} />
+					<ProjectsFilter setSelectProject={setSelectProject} projects={allProjects} />
 				</div>
 			</div>
 
@@ -95,7 +97,7 @@ function ProjectsGrid() {
 				</div>
 			) : (
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-5">
-					{filteredProjects.map((project) => (
+					{displayedProjects.map((project) => (
 						<ProjectSingle key={project._id} {...project} />
 					))}
 				</div>
